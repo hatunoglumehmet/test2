@@ -1,0 +1,265 @@
+# Ottoman Dynasty Characters
+
+# Fatih Sultan Mehmet II
+ottoman_mehmet_ii = {
+	name = "Mehmet"
+	dynasty = ottoman_dynasty
+	dynasty_house = house_ottoman
+	religion = sunni
+	culture = ottoman
+	
+	trait = conqueror_of_constantinople
+	trait = ottoman_legacy
+	trait = ghazi_warrior
+	trait = brilliant_strategist
+	trait = ambitious
+	trait = brave
+	trait = zealous
+	trait = patient
+	
+	diplomacy = 15
+	martial = 22
+	stewardship = 14
+	intrigue = 13
+	learning = 18
+	prowess = 16
+	
+	birth = 1432.3.30
+	death = 1481.5.3
+	
+	father = ottoman_murad_ii
+	
+	sexuality = heterosexual
+	
+	give_nickname = nick_the_conqueror
+	
+	1453.5.29 = {
+		effect = {
+			add_trait = conqueror_of_constantinople
+		}
+	}
+}
+
+# Sultan Murad II
+ottoman_murad_ii = {
+	name = "Murad"
+	dynasty = ottoman_dynasty
+	dynasty_house = house_ottoman
+	religion = sunni
+	culture = ottoman
+	
+	trait = ottoman_legacy
+	trait = ghazi_warrior
+	trait = brilliant_strategist
+	trait = just
+	trait = temperate
+	trait = patient
+	
+	diplomacy = 16
+	martial = 18
+	stewardship = 15
+	intrigue = 12
+	learning = 14
+	prowess = 14
+	
+	birth = 1404.6.16
+	death = 1451.2.3
+	
+	father = ottoman_mehmet_i
+}
+
+# Sultan Bayezid II
+ottoman_bayezid_ii = {
+	name = "Bayezid"
+	dynasty = ottoman_dynasty
+	dynasty_house = house_ottoman
+	religion = sunni
+	culture = ottoman
+	
+	trait = ottoman_legacy
+	trait = just
+	trait = temperate
+	trait = patient
+	trait = scholarly
+	trait = calm
+	
+	diplomacy = 18
+	martial = 12
+	stewardship = 16
+	intrigue = 13
+	learning = 19
+	prowess = 10
+	
+	birth = 1447.12.3
+	death = 1512.5.26
+	
+	father = ottoman_mehmet_ii
+}
+
+# Cem Sultan (Brother of Bayezid II)
+ottoman_cem_sultan = {
+	name = "Cem"
+	dynasty = ottoman_dynasty
+	dynasty_house = house_ottoman
+	religion = sunni
+	culture = ottoman
+	
+	trait = ottoman_legacy
+	trait = ambitious
+	trait = brave
+	trait = wrathful
+	trait = poet
+	
+	diplomacy = 14
+	martial = 16
+	stewardship = 12
+	intrigue = 15
+	learning = 17
+	prowess = 13
+	
+	birth = 1459.12.22
+	death = 1495.2.25
+	
+	father = ottoman_mehmet_ii
+}
+
+# Halil Pasha (Grand Vizier)
+ottoman_halil_pasha = {
+	name = "Halil"
+	dynasty = pasha_dynasty
+	religion = sunni
+	culture = ottoman
+	
+	trait = grand_vizier
+	trait = administrator
+	trait = diligent
+	trait = honest
+	
+	diplomacy = 18
+	martial = 12
+	stewardship = 20
+	intrigue = 14
+	learning = 16
+	prowess = 8
+	
+	birth = 1400.1.1
+	death = 1453.7.1
+}
+
+# Zaganos Pasha (Military Commander)
+ottoman_zaganos_pasha = {
+	name = "Zaganos"
+	dynasty = pasha_dynasty
+	religion = sunni
+	culture = ottoman
+	
+	trait = janissary_commander
+	trait = devshirme_officer
+	trait = brave
+	trait = ambitious
+	trait = wrathful
+	
+	diplomacy = 12
+	martial = 20
+	stewardship = 14
+	intrigue = 16
+	learning = 10
+	prowess = 18
+	
+	birth = 1410.1.1
+	death = 1469.1.1
+}
+
+# Orban (Hungarian Cannon Master)
+ottoman_orban = {
+	name = "Orban"
+	dynasty = minor_dynasty
+	religion = orthodox
+	culture = hungarian
+	
+	trait = master_of_siege
+	trait = architect
+	trait = genius
+	trait = ambitious
+	
+	diplomacy = 8
+	martial = 16
+	stewardship = 12
+	intrigue = 10
+	learning = 22
+	prowess = 6
+	
+	birth = 1420.1.1
+	death = 1453.6.1
+}
+
+# Constantine XI Palaiologos (Last Byzantine Emperor)
+byzantine_constantine_xi = {
+	name = "Constantine"
+	dynasty = palaiologos_dynasty
+	religion = orthodox
+	culture = greek
+	
+	trait = brave
+	trait = honest
+	trait = zealous
+	trait = melancholic
+	trait = stubborn
+	
+	diplomacy = 14
+	martial = 16
+	stewardship = 12
+	intrigue = 10
+	learning = 15
+	prowess = 14
+	
+	birth = 1405.2.8
+	death = 1453.5.29
+}
+
+# Hasan Pasha (Ottoman Admiral)
+ottoman_hasan_pasha = {
+	name = "Hasan"
+	dynasty = pasha_dynasty
+	religion = sunni
+	culture = ottoman
+	
+	trait = admiral
+	trait = brave
+	trait = ambitious
+	trait = patient
+	
+	diplomacy = 13
+	martial = 18
+	stewardship = 12
+	intrigue = 11
+	learning = 10
+	prowess = 16
+	
+	birth = 1415.1.1
+	death = 1470.1.1
+}
+
+# Mimar Sinan (Great Ottoman Architect) 
+ottoman_mimar_sinan = {
+	name = "Sinan"
+	dynasty = minor_dynasty
+	religion = sunni
+	culture = ottoman
+	
+	trait = ottoman_architect
+	trait = genius
+	trait = patient
+	trait = diligent
+	trait = humble
+	
+	diplomacy = 12
+	martial = 8
+	stewardship = 20
+	intrigue = 10
+	learning = 22
+	prowess = 6
+	
+	birth = 1488.4.15
+	death = 1588.7.17
+}

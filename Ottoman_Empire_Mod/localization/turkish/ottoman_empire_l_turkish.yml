@@ -1,0 +1,64 @@
+l_turkish:
+ # Ottoman Empire Mod - Turkish Localization
+ ottoman_empire_mod_name:0 "Osmanlı İmparatorluğu"
+ fatih_sultan_mehmet:0 "Fatih Sultan Mehmet"
+ 
+ # Character Names
+ mehmet_ii:0 "II. Mehmet"
+ bayezid_ii:0 "II. Bayezid" 
+ murad_ii:0 "II. Murad"
+ orhan_gazi:0 "Orhan Gazi"
+ osman_gazi:0 "Osman Gazi"
+ 
+ # Titles
+ ottoman_empire_title:0 "Osmanlı İmparatorluğu"
+ constantinople_title:0 "Konstantiniyye"
+ istanbul_title:0 "İstanbul"
+ bursa_title:0 "Bursa"
+ edirne_title:0 "Edirne"
+ 
+ # Traits
+ conqueror_of_constantinople:0 "Konstantiniyye Fatihi"
+ conqueror_of_constantinople_desc:0 "Bu karakter Konstantiniyye'yi (İstanbul) fethetmiştir ve İslam dünyasında büyük saygı görmektedir."
+ 
+ ottoman_legacy:0 "Osmanlı Mirası"
+ ottoman_legacy_desc:0 "Bu karakter Osmanlı hanedanının bir üyesidir ve büyük bir mirasa sahiptir."
+ 
+ ghazi_warrior:0 "Gazi Savaşçısı"
+ ghazi_warrior_desc:0 "Bu karakter İslam için savaşan kutsal bir savaşçıdır."
+ 
+ # Events
+ conquest_of_constantinople:0 "Konstantiniyye'nin Fethi"
+ conquest_of_constantinople_desc:0 "Büyük gün geldi! Konstantiniyye'nin suları karşımızda duruyor ve şehrin kadim surları bizim kararlılığımız karşısında çaresiz kalıyor. Bu fetih İslam dünyası için büyük bir zafer olacak!"
+ 
+ # Buildings
+ ottoman_palace:0 "Osmanlı Sarayı"
+ ottoman_palace_desc:0 "Muhteşem Osmanlı mimarisiyle inşa edilmiş büyük bir saray kompleksi."
+ 
+ janissary_barracks:0 "Yeniçeri Kışlası"
+ janissary_barracks_desc:0 "Osmanlı İmparatorluğu'nun seçkin askeri birimi Yeniçeriler için özel kışla."
+ 
+ grand_bazaar:0 "Kapalıçarşı"
+ grand_bazaar_desc:0 "Dünyanın en büyük kapalı çarşılarından biri, ticaret ve zanaat merkezı."
+ 
+ # Innovations
+ ottoman_cannons:0 "Osmanlı Topları"
+ ottoman_cannons_desc:0 "Osmanlılar tarafından geliştirilen güçlü kuşatma topları."
+ 
+ devshirme_system:0 "Devşirme Sistemi"
+ devshirme_system_desc:0 "Osmanlı İmparatorluğu'nun kendine özgü asker ve bürokrat yetiştirme sistemi."
+ 
+ # Decisions
+ form_ottoman_empire:0 "Osmanlı İmparatorluğu'nu Kurmak"
+ form_ottoman_empire_desc:0 "Küçük bir beylikten büyük bir imparatorluk yaratmak için gerekli koşulları sağladık."
+ 
+ conquer_constantinople_decision:0 "Konstantiniyye'yi Fethetmek"
+ conquer_constantinople_decision_desc:0 "İslam dünyasının hayali olan Konstantiniyye'yi fethetme zamanı geldi!"
+ 
+ # Government Types
+ ottoman_sultanate:0 "Osmanlı Sultanlığı"
+ ottoman_sultanate_desc:0 "Osmanlı İmparatorluğu'nun kendine özgü yönetim sistemi."
+ 
+ # Culture
+ ottoman_culture:0 "Osmanlı"
+ ottoman_culture_desc:0 "Türk, Fars ve Arap kültürlerinin sentezi olan Osmanlı kültürü."

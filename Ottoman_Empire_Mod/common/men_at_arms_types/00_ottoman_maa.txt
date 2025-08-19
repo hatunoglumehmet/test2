@@ -1,0 +1,224 @@
+# Ottoman Men-at-Arms
+
+# Janissary Infantry
+janissary_infantry = {
+	type = heavy_infantry
+	
+	damage = 22
+	toughness = 32
+	pursuit = 0
+	screen = 15
+	
+	terrain_bonus = {
+		hills = { damage = 4 toughness = 2 }
+		mountains = { damage = 6 toughness = 4 }
+		desert = { damage = 2 }
+		oasis = { damage = 2 }
+		floodplains = { damage = 3 }
+		farmlands = { damage = 2 }
+		forest = { damage = 4 toughness = 2 }
+		taiga = { damage = 4 toughness = 2 }
+		wetlands = { damage = -2 toughness = -4 }
+	}
+	
+	counters = {
+		skirmishers = 1
+		heavy_cavalry = 0.5
+	}
+	
+	winter_bonus = {
+		normal_winter = { damage = 2 toughness = 4 }
+		harsh_winter = { damage = 4 toughness = 6 }
+	}
+	
+	can_recruit = {
+		culture = { has_innovation = innovation_janissary_corps }
+	}
+	
+	cost = {
+		gold = 45
+		prestige = 0.2
+	}
+	
+	low_maintenance_cost = {
+		gold = 1.0
+		prestige = 0.01
+	}
+	
+	high_maintenance_cost = {
+		gold = 5.0
+		prestige = 0.05
+	}
+	
+	holy_order = yes
+	mercenary_fallback = heavy_infantry
+	
+	stack = 100
+	
+	buy_cost = { gold = 45 }
+	low_maintenance = { gold = 1.0 }
+	high_maintenance = { gold = 5.0 }
+}
+
+# Sipahi Cavalry
+sipahi_cavalry = {
+	type = heavy_cavalry
+	
+	damage = 30
+	toughness = 20
+	pursuit = 30
+	screen = 0
+	
+	terrain_bonus = {
+		plains = { damage = 6 pursuit = 6 }
+		drylands = { damage = 4 pursuit = 4 }
+		steppe = { damage = 8 pursuit = 8 }
+		farmlands = { damage = 4 pursuit = 2 }
+		floodplains = { damage = 2 pursuit = 2 }
+		hills = { damage = -2 pursuit = -4 }
+		mountains = { damage = -6 pursuit = -8 toughness = -4 }
+		desert = { damage = 2 toughness = -2 }
+		oasis = { damage = 2 }
+		forest = { damage = -4 pursuit = -6 toughness = -2 }
+		taiga = { damage = -4 pursuit = -6 toughness = -2 }
+		wetlands = { damage = -8 pursuit = -10 toughness = -6 }
+	}
+	
+	counters = {
+		archers = 1
+		skirmishers = 1
+	}
+	
+	can_recruit = {
+		culture = { has_innovation = innovation_sipahi_cavalry }
+	}
+	
+	cost = {
+		gold = 60
+		prestige = 0.3
+	}
+	
+	low_maintenance_cost = {
+		gold = 1.5
+		prestige = 0.015
+	}
+	
+	high_maintenance_cost = {
+		gold = 7.5
+		prestige = 0.075
+	}
+	
+	mercenary_fallback = heavy_cavalry
+	
+	stack = 50
+	
+	buy_cost = { gold = 60 }
+	low_maintenance = { gold = 1.5 }
+	high_maintenance = { gold = 7.5 }
+}
+
+# Ottoman Cannons
+ottoman_cannons = {
+	type = siege_weapon
+	
+	damage = 25
+	toughness = 5
+	pursuit = 0
+	screen = 0
+	
+	siege_tier = 3
+	siege_value = 1.5
+	
+	terrain_bonus = {
+		plains = { damage = 2 }
+		farmlands = { damage = 2 }
+		floodplains = { damage = 2 }
+		hills = { damage = -2 }
+		mountains = { damage = -6 toughness = -2 }
+		forest = { damage = -2 }
+		taiga = { damage = -2 }
+		wetlands = { damage = -4 toughness = -2 }
+		desert = { toughness = -1 }
+	}
+	
+	can_recruit = {
+		culture = { has_innovation = innovation_ottoman_cannons }
+	}
+	
+	cost = {
+		gold = 150
+		prestige = 0.5
+	}
+	
+	low_maintenance_cost = {
+		gold = 3.0
+		prestige = 0.025
+	}
+	
+	high_maintenance_cost = {
+		gold = 15.0
+		prestige = 0.125
+	}
+	
+	mercenary_fallback = onager
+	
+	stack = 25
+	
+	buy_cost = { gold = 150 }
+	low_maintenance = { gold = 3.0 }
+	high_maintenance = { gold = 15.0 }
+}
+
+# Akıncı Raiders
+akinci_raiders = {
+	type = light_cavalry
+	
+	damage = 18
+	toughness = 10
+	pursuit = 35
+	screen = 20
+	
+	terrain_bonus = {
+		plains = { damage = 4 pursuit = 4 }
+		drylands = { damage = 6 pursuit = 6 }
+		steppe = { damage = 8 pursuit = 8 }
+		farmlands = { damage = 2 pursuit = 2 }
+		hills = { damage = -2 pursuit = -2 }
+		mountains = { damage = -4 pursuit = -6 }
+		forest = { damage = -2 pursuit = -4 }
+		taiga = { damage = -2 pursuit = -4 }
+		wetlands = { damage = -6 pursuit = -8 }
+	}
+	
+	counters = {
+		archers = 0.5
+		heavy_infantry = 0.25
+	}
+	
+	can_recruit = {
+		culture = ottoman
+	}
+	
+	cost = {
+		gold = 25
+		prestige = 0.1
+	}
+	
+	low_maintenance_cost = {
+		gold = 0.5
+		prestige = 0.005
+	}
+	
+	high_maintenance_cost = {
+		gold = 2.5
+		prestige = 0.025
+	}
+	
+	mercenary_fallback = light_cavalry
+	
+	stack = 100
+	
+	buy_cost = { gold = 25 }
+	low_maintenance = { gold = 0.5 }
+	high_maintenance = { gold = 2.5 }
+}

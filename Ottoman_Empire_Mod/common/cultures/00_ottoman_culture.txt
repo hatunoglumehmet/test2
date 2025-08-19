@@ -1,0 +1,129 @@
+# Ottoman Culture
+
+ottoman_culture_group = {
+	graphical_culture = arabic_coa_gfx
+	
+	ottoman = {
+		color = { 0.6 0.2 0.2 }
+		
+		# Heritage
+		heritage = heritage_turkic
+		
+		# Language
+		language = language_turkish
+		
+		# Ethos
+		ethos = ethos_bellicose
+		
+		# Traditions
+		traditions = {
+			tradition_stalwart_defenders
+			tradition_astute_diplomats  
+			tradition_maritime_mercantilism
+			tradition_horse_lords
+			tradition_adaptive_skirmishers
+		}
+		
+		# Name lists
+		male_names = {
+			Mehmet Murad Bayezid Selim Süleyman Ahmed Mustafa İbrahim Osman Orhan
+			Halil Zaganos Hasan Kemal Yusuf Ali Hüseyin İsmail Ömer Ebubekir
+			Davud Musa Yakub Yusuf Cemil Hüsrev Rüstem İskender Barbaros
+		}
+		
+		female_names = {
+			Ayşe Fatma Hatice Zeynep Ümmühan Safiye Nurbanu Kösem Mihrimah
+			Hürrem Gülbahar Şah Sultan Esma Rukiye Saliha Hadice Gevherhan
+			İsmihan Şehzade Dilşad Nilüfer Halime Turhan
+		}
+		
+		# Dynasty names
+		dynasty_names = {
+			"Osmanli" "Pasha" "Bey" "Ağa" "Efendi"
+		}
+		
+		# Cultural bonuses
+		character_modifier = {
+			diplomacy_per_prestige_level = 1
+			monthly_prestige_mult = 0.05
+			different_culture_opinion = 10
+			holy_war_cb_cost_mult = -0.15
+		}
+		
+		province_modifier = {
+			supply_limit_mult = 0.1
+			tax_mult = 0.05
+		}
+		
+		county_modifier = {
+			development_growth_factor = 0.15
+			tax_mult = 0.1
+		}
+		
+		# Building preferences  
+		building_preference = {
+			castle_01 = 5
+			castle_02 = 5
+			castle_03 = 5
+			city_01 = 4
+			city_02 = 4
+			city_03 = 4
+			temple_01 = 3
+			temple_02 = 3
+			temple_03 = 3
+		}
+		
+		# AI preferences
+		ai_personality = {
+			rationality = 0
+			energy = 25
+			honor = 50
+			boldness = 25
+			compassion = 0
+			greed = -25
+			vengefulness = 25
+			sociability = 0
+			zeal = 50
+		}
+		
+		# Marriage preferences
+		marry_same_culture = 4
+		marry_other_culture = 2
+		
+		# Combat preferences
+		combat_bonus = {
+			heavy_infantry_damage_mult = 0.1
+			heavy_cavalry_damage_mult = 0.15
+			siege_weapon_effectiveness = 0.25
+		}
+		
+		# Innovation preferences
+		innovation_chance = {
+			innovation_ottoman_cannons = 2.0
+			innovation_devshirme_system = 2.0
+			innovation_janissary_corps = 2.0
+			innovation_sipahi_cavalry = 1.5
+			innovation_ottoman_administration = 1.5
+		}
+		
+		# Special mechanics
+		can_form_empire = { title:e_ottoman }
+		can_adopt_government = { ottoman_sultanate_government }
+		
+		# Court language
+		court_language = turkish
+		
+		# Cultural acceptance
+		cultural_acceptance = {
+			turkish = 90
+			greek = 40
+			armenian = 50
+			kurdish = 60
+			arabic = 70
+			persian = 80
+			bulgarian = 45
+			serbian = 40
+			albanian = 50
+		}
+	}
+}

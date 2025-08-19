@@ -1,0 +1,337 @@
+# Ottoman Court Positions
+
+grand_vizier_ottoman = {
+	skill = stewardship
+	max_available_positions = 1
+	
+	opinion = {
+		same_culture_opinion = 10
+		different_culture_opinion = 5
+	}
+	
+	valid_position = {
+		is_adult = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		trigger_if = {
+			limit = { exists = liege }
+			NOT = { 
+				is_at_war_with = liege 
+			}
+		}
+	}
+	
+	is_shown = {
+		scope:liege = {
+			culture = ottoman
+			has_government = ottoman_sultanate_government
+		}
+	}
+	
+	valid_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege  
+			stewardship >= 12
+			is_adult = yes
+			NOT = { has_trait = incapable }
+		}
+	}
+	
+	revoke_cost = {
+		prestige = 25
+	}
+	
+	salary = {
+		gold = 3
+	}
+	
+	is_powerful_vassal = yes
+	
+	employer_modifier = {
+		domain_limit = 2
+		vassal_opinion = 10
+		monthly_county_control_growth_factor = 0.2
+		monthly_prestige = 0.3
+	}
+	
+	employee_modifier = {
+		monthly_prestige = 0.5
+		stewardship = 3
+		diplomacy = 1
+	}
+	
+	candidate_score = {
+		value = 100
+		add = scope:employee.stewardship
+		
+		if = {
+			limit = { scope:employee = { has_trait = administrator } }
+			add = 25
+		}
+		
+		if = {
+			limit = { scope:employee = { culture = scope:liege.culture } }
+			add = 15
+		}
+		
+		if = {
+			limit = { scope:employee = { has_trait = grand_vizier } }
+			add = 50
+		}
+	}
+}
+
+sipahsalar_ottoman = {
+	skill = martial
+	max_available_positions = 1
+	
+	valid_position = {
+		is_adult = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		martial >= 10
+	}
+	
+	is_shown = {
+		scope:liege = {
+			culture = ottoman
+			has_government = ottoman_sultanate_government
+		}
+	}
+	
+	valid_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege
+			martial >= 12
+			is_adult = yes
+			NOT = { has_trait = incapable }
+		}
+	}
+	
+	revoke_cost = {
+		prestige = 20
+	}
+	
+	salary = {
+		gold = 4
+	}
+	
+	employer_modifier = {
+		men_at_arms_cap = 2
+		men_at_arms_maintenance = -0.1
+		knight_effectiveness_mult = 0.15
+		monthly_prestige = 0.2
+	}
+	
+	employee_modifier = {
+		monthly_prestige = 0.4
+		martial = 3
+		prowess = 1
+	}
+	
+	candidate_score = {
+		value = 100
+		add = scope:employee.martial
+		
+		if = {
+			limit = { scope:employee = { has_trait = brilliant_strategist } }
+			add = 30
+		}
+		
+		if = {
+			limit = { scope:employee = { has_trait = janissary_commander } }
+			add = 40
+		}
+	}
+}
+
+chief_eunuch_ottoman = {
+	skill = intrigue
+	max_available_positions = 1
+	
+	valid_position = {
+		is_adult = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		intrigue >= 10
+		has_trait = eunuch
+	}
+	
+	is_shown = {
+		scope:liege = {
+			culture = ottoman
+			has_government = ottoman_sultanate_government
+		}
+	}
+	
+	valid_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege
+			intrigue >= 12
+			is_adult = yes
+			NOT = { has_trait = incapable }
+			has_trait = eunuch
+		}
+	}
+	
+	revoke_cost = {
+		prestige = 15
+	}
+	
+	salary = {
+		gold = 2
+	}
+	
+	employer_modifier = {
+		court_opinion = 15
+		hostile_scheme_resistance_mult = 0.2
+		monthly_prestige = 0.1
+		intrigue_per_piety_level = 1
+	}
+	
+	employee_modifier = {
+		monthly_prestige = 0.3
+		intrigue = 3
+		court_opinion = 10
+	}
+	
+	candidate_score = {
+		value = 100
+		add = scope:employee.intrigue
+		
+		if = {
+			limit = { scope:employee = { has_trait = spymaster } }
+			add = 25
+		}
+	}
+}
+
+chief_treasurer_ottoman = {
+	skill = stewardship
+	max_available_positions = 1
+	
+	valid_position = {
+		is_adult = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		stewardship >= 12
+	}
+	
+	is_shown = {
+		scope:liege = {
+			culture = ottoman
+			has_government = ottoman_sultanate_government
+		}
+	}
+	
+	valid_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege
+			stewardship >= 12
+			is_adult = yes
+			NOT = { has_trait = incapable }
+		}
+	}
+	
+	revoke_cost = {
+		prestige = 20
+	}
+	
+	salary = {
+		gold = 3
+	}
+	
+	employer_modifier = {
+		monthly_income_mult = 0.15
+		tax_mult = 0.1
+		build_speed = -0.1
+		monthly_prestige = 0.1
+	}
+	
+	employee_modifier = {
+		monthly_prestige = 0.3
+		stewardship = 2
+		monthly_income_mult = 0.05
+	}
+	
+	candidate_score = {
+		value = 100
+		add = scope:employee.stewardship
+		
+		if = {
+			limit = { scope:employee = { has_trait = architect } }
+			add = 20
+		}
+		
+		if = {
+			limit = { scope:employee = { has_trait = administrator } }
+			add = 25
+		}
+	}
+}
+
+court_imam_ottoman = {
+	skill = learning
+	max_available_positions = 1
+	
+	valid_position = {
+		is_adult = yes
+		is_imprisoned = no
+		NOT = { has_trait = incapable }
+		learning >= 10
+		religion = scope:liege.religion
+	}
+	
+	is_shown = {
+		scope:liege = {
+			culture = ottoman
+			has_government = ottoman_sultanate_government
+		}
+	}
+	
+	valid_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege
+			learning >= 12
+			is_adult = yes
+			NOT = { has_trait = incapable }
+			religion = scope:liege.religion
+		}
+	}
+	
+	revoke_cost = {
+		piety = 50
+	}
+	
+	salary = {
+		gold = 2
+	}
+	
+	employer_modifier = {
+		monthly_piety_mult = 0.2
+		same_faith_opinion = 15
+		monthly_learning_lifestyle_xp_mult = 0.1
+		monthly_prestige = 0.1
+	}
+	
+	employee_modifier = {
+		monthly_piety = 0.5
+		learning = 2
+		same_faith_opinion = 10
+	}
+	
+	candidate_score = {
+		value = 100
+		add = scope:employee.learning
+		
+		if = {
+			limit = { scope:employee = { has_trait = theologian } }
+			add = 30
+		}
+		
+		if = {
+			limit = { scope:employee = { has_trait = scholar } }
+			add = 20
+		}
+	}
+}

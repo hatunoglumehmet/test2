@@ -1,0 +1,163 @@
+# Ottoman Empire Modifiers
+
+# Character Modifiers
+preparing_great_conquest = {
+	icon = conquest_cb
+	
+	martial = 3
+	prowess = 2
+	monthly_prestige = 0.5
+	
+	army_maintenance_mult = -0.1
+	siege_weapon_effectiveness = 0.3
+	
+	same_faith_opinion = 15
+}
+
+established_janissary_corps = {
+	icon = heavy_infantry_damage_mult
+	
+	men_at_arms_cap = 3
+	men_at_arms_maintenance = -0.2
+	levy_reinforcement_rate = 0.25
+	
+	monthly_prestige = 0.3
+	vassal_opinion = 15
+}
+
+loyal_janissaries = {
+	icon = opinion_boost
+	
+	army_maintenance_mult = -0.15
+	knight_effectiveness_mult = 0.3
+	levy_reinforcement_rate = 0.2
+	
+	monthly_prestige = 0.2
+}
+
+janissary_unrest = {
+	icon = stress_gain_mult
+	
+	levy_reinforcement_rate = -0.2
+	army_maintenance_mult = 0.1
+	monthly_prestige = -0.3
+	
+	stress_gain_mult = 0.1
+}
+
+established_ottoman_navy = {
+	icon = naval_speed_mult
+	
+	naval_speed_mult = 0.3
+	embarkation_cost_mult = -0.4
+	coastal_advantage = 20
+	
+	monthly_prestige = 0.2
+}
+
+siege_master = {
+	icon = siege_weapon_effectiveness
+	
+	siege_phase_time = -0.3
+	siege_weapon_effectiveness = 0.5
+	martial = 2
+	
+	monthly_prestige = 0.15
+}
+
+# County Modifiers
+janissary_recruitment = {
+	icon = heavy_infantry_damage_mult
+	
+	levy_reinforcement_rate = 0.3
+	supply_limit_mult = 0.15
+	garrison_size = 0.2
+}
+
+devshirme_recruitment = {
+	icon = opinion_boost
+	
+	levy_size = 0.25
+	levy_reinforcement_rate = 0.2
+	tax_mult = 0.1
+	
+	popular_opinion = 5
+}
+
+grand_mosque_construction = {
+	icon = monthly_piety
+	
+	monthly_piety = 1.0
+	tax_mult = 0.1
+	development_growth = 0.2
+	
+	popular_opinion = 15
+	county_opinion_add = 20
+}
+
+naval_expansion = {
+	icon = naval_speed_mult
+	
+	coastal_advantage = 15
+	tax_mult = 0.1
+	development_growth = 0.15
+	
+	supply_limit_mult = 0.1
+}
+
+thriving_trade = {
+	icon = monthly_income_mult
+	
+	tax_mult = 0.2
+	development_growth = 0.25
+	monthly_income_mult = 0.1
+	
+	popular_opinion = 10
+}
+
+imperial_capital = {
+	icon = monthly_prestige_mult
+	
+	tax_mult = 0.3
+	development_growth = 0.4
+	levy_size = 0.2
+	garrison_size = 0.3
+	
+	county_opinion_add = 25
+}
+
+# Province Modifiers
+ottoman_administration = {
+	icon = monthly_county_control_growth_factor
+	
+	monthly_county_control_growth_factor = 0.3
+	tax_mult = 0.15
+	supply_limit_mult = 0.2
+	
+	popular_opinion = 10
+}
+
+# Opinion Modifiers
+respected_ruler = {
+	opinion = 25
+}
+
+efficient_administrator = {
+	opinion = 15  
+}
+
+heavy_taxation = {
+	opinion = -10
+}
+
+cruel_ruler = {
+	opinion = -30
+}
+
+formed_great_empire = {
+	opinion = 50
+}
+
+built_grand_mosque_opinion = {
+	opinion = 30
+}

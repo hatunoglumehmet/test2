@@ -1,0 +1,25 @@
+# Ottoman Dynasty House
+
+house_ottoman = {
+	name = "house_ottoman"
+	dynasty = ottoman_dynasty
+	
+	motto = "house_ottoman_motto"
+	
+	coat_of_arms = {
+		template = coa_plain_01
+		layer = {
+			texture = "gfx/coat_of_arms/colored_emblems/ce_crescent_star.dds"
+			color1 = red
+			color2 = white
+		}
+		layer = {
+			texture = "gfx/coat_of_arms/colored_emblems/ce_sword.dds"
+			color1 = yellow
+			color2 = white
+		}
+	}
+	
+	# Historical founding
+	found_date = 1299.1.1
+}

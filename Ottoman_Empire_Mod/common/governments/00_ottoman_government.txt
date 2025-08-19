@@ -1,0 +1,70 @@
+# Ottoman Empire Government
+
+ottoman_sultanate_government = {
+	create_cadet_branches = yes
+	rulers_should_have_dynasty = yes
+	dynasty_named_realms = yes
+	council = yes
+	
+	primary_holding = castle_holding
+	required_county_type = castle_holding
+	
+	allows = {
+		culture = ottoman
+		religion = { is_in_family = rf_islamic }
+		highest_held_title_tier >= tier_kingdom
+	}
+	
+	opinion = {
+		same_government_opinion = 5
+		
+		# Opinions towards other government types
+		tribal_government_opinion = -10
+		feudal_government_opinion = 0
+		clan_government_opinion = 10
+		republic_government_opinion = -15
+		theocracy_government_opinion = 5
+	}
+	
+	valid_holdings = { castle_holding city_holding }
+	
+	character_modifier = {
+		monthly_prestige_mult = 0.1
+		monthly_piety_mult = 0.05
+		domain_limit = 2
+		vassal_opinion = 10
+		same_faith_opinion = 15
+		different_culture_opinion = 10
+		army_maintenance_mult = -0.1
+		men_at_arms_maintenance = -0.15
+		diplomatic_range_mult = 0.25
+	}
+	
+	flag = government_allows_male_consorts
+	flag = government_allows_female_consorts
+	
+	# Special mechanics
+	has_title_law_revocation = yes
+	can_title_revoke_on_tyranny_gain = yes
+	can_imprison_on_tyranny_gain = yes
+	can_execute_on_tyranny_gain = yes
+	
+	# Succession laws available
+	succession_laws = {
+		ottoman_succession
+		single_heir_succession_law
+		single_heir_dynasty_house
+		confederate_partition_succession_law
+		partition_succession_law
+		high_partition_succession_law
+	}
+	
+	# Crown authority levels
+	crown_authority_laws = {
+		crown_authority_0
+		crown_authority_1
+		crown_authority_2
+		crown_authority_3
+		crown_authority_4
+	}
+}

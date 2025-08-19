@@ -1,0 +1,289 @@
+# Conquest of Constantinople Event Chain
+
+namespace = conquest_constantinople
+
+# Event 1: Preparations for the Siege
+conquest_constantinople.001 = {
+	type = character_event
+	title = conquest_constantinople.001.t
+	desc = conquest_constantinople.001.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		has_trait = ottoman_legacy
+		is_at_war_with = title:e_byzantine_empire.holder
+		title:c_byzantion.holder = {
+			target_is_liege_or_above = title:e_byzantine_empire.holder
+		}
+		NOT = { has_character_flag = constantinople_siege_prepared }
+	}
+	
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 5
+			has_trait = conqueror_of_constantinople
+		}
+	}
+	
+	immediate = {
+		add_character_flag = constantinople_siege_prepared
+	}
+	
+	option = {
+		name = conquest_constantinople.001.a
+		
+		add_prestige = 200
+		add_piety = 100
+		add_trait = ambitious
+		
+		custom_tooltip = conquest_constantinople.001.a.tt
+		
+		trigger_event = {
+			id = conquest_constantinople.002
+			days = 30
+		}
+	}
+	
+	option = {
+		name = conquest_constantinople.001.b
+		
+		add_stress = 50
+		add_prestige = -100
+		
+		custom_tooltip = conquest_constantinople.001.b.tt
+	}
+}
+
+# Event 2: The Great Cannon
+conquest_constantinople.002 = {
+	type = character_event
+	title = conquest_constantinople.002.t
+	desc = conquest_constantinople.002.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	right_portrait = {
+		character = ottoman_orban
+		animation = personality_rational
+	}
+	
+	option = {
+		name = conquest_constantinople.002.a
+		
+		add_gold = -500
+		add_prestige = 150
+		
+		custom_tooltip = conquest_constantinople.002.a.tt
+		
+		trigger_event = {
+			id = conquest_constantinople.003
+			days = 45
+		}
+	}
+	
+	option = {
+		name = conquest_constantinople.002.b
+		
+		add_gold = -200
+		add_prestige = 50
+		
+		custom_tooltip = conquest_constantinople.002.b.tt
+		
+		trigger_event = {
+			id = conquest_constantinople.003
+			days = 60
+		}
+	}
+}
+
+# Event 3: The Final Assault
+conquest_constantinople.003 = {
+	type = character_event
+	title = conquest_constantinople.003.t
+	desc = conquest_constantinople.003.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = {
+		name = conquest_constantinople.003.a
+		
+		add_trait = conqueror_of_constantinople
+		add_prestige = 1000
+		add_piety = 500
+		add_gold = 2000
+		
+		title:c_byzantion = {
+			if = {
+				limit = { exists = holder }
+				holder = {
+					add_trait = wounded
+					add_stress = 200
+				}
+			}
+		}
+		
+		custom_tooltip = conquest_constantinople.003.a.tt
+		
+		trigger_event = {
+			id = conquest_constantinople.004
+			days = 7
+		}
+	}
+}
+
+# Event 4: Aftermath of the Conquest
+conquest_constantinople.004 = {
+	type = character_event
+	title = conquest_constantinople.004.t
+	desc = conquest_constantinople.004.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	option = {
+		name = conquest_constantinople.004.a
+		
+		add_piety = 200
+		add_trait = just
+		
+		every_vassal = {
+			limit = { religion = root.religion }
+			add_opinion = {
+				target = root
+				modifier = respected_ruler
+				opinion = 20
+			}
+		}
+		
+		custom_tooltip = conquest_constantinople.004.a.tt
+	}
+	
+	option = {
+		name = conquest_constantinople.004.b
+		
+		add_gold = 1000
+		add_trait = greedy
+		add_stress = 100
+		
+		every_vassal = {
+			limit = { NOT = { religion = root.religion } }
+			add_opinion = {
+				target = root
+				modifier = cruel_ruler
+				opinion = -30
+			}
+		}
+		
+		custom_tooltip = conquest_constantinople.004.b.tt
+	}
+}
+
+# Event 5: Renaming the City
+conquest_constantinople.005 = {
+	type = character_event
+	title = conquest_constantinople.005.t
+	desc = conquest_constantinople.005.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		has_trait = conqueror_of_constantinople
+		completely_controls = title:c_byzantion
+		NOT = { has_character_flag = renamed_constantinople }
+	}
+	
+	immediate = {
+		add_character_flag = renamed_constantinople
+	}
+	
+	option = {
+		name = conquest_constantinople.005.a
+		
+		title:c_byzantion = {
+			set_county_culture = ottoman
+			set_county_faith = sunni
+		}
+		
+		add_prestige = 300
+		add_piety = 200
+		
+		custom_tooltip = conquest_constantinople.005.a.tt
+	}
+	
+	option = {
+		name = conquest_constantinople.005.b
+		
+		add_learning_lifestyle_xp = 100
+		add_prestige = 100
+		
+		custom_tooltip = conquest_constantinople.005.b.tt
+	}
+}
+
+# Yearly pulse event for Ottoman rulers
+conquest_constantinople.100 = {
+	type = character_event
+	hidden = yes
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		has_trait = ottoman_legacy
+		NOT = { has_trait = conqueror_of_constantinople }
+		exists = title:e_byzantine_empire.holder
+		title:c_byzantion.holder = {
+			target_is_liege_or_above = title:e_byzantine_empire.holder
+		}
+		NOT = { has_character_flag = constantinople_conquest_available }
+	}
+	
+	mean_time_to_happen = {
+		years = 2
+		
+		modifier = {
+			factor = 0.5
+			has_trait = ambitious
+		}
+		
+		modifier = {
+			factor = 0.3
+			has_trait = brave
+		}
+		
+		modifier = {
+			factor = 2
+			has_trait = craven
+		}
+	}
+	
+	immediate = {
+		add_character_flag = constantinople_conquest_available
+		trigger_event = {
+			id = conquest_constantinople.001
+			days = { 10 30 }
+		}
+	}
+}

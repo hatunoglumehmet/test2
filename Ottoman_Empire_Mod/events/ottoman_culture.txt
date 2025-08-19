@@ -1,0 +1,425 @@
+# Ottoman Cultural and Feast Events
+
+namespace = ottoman_culture
+
+# Ottoman Feast Event
+ottoman_culture.001 = {
+	type = character_event
+	title = ottoman_culture.001.t
+	desc = ottoman_culture.001.desc
+	theme = feast
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	right_portrait = {
+		character = scope:feast_guest
+		animation = personality_content
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		gold >= 300
+		NOT = { has_character_flag = ottoman_feast_event }
+		any_courtier = {
+			is_adult = yes
+			NOT = { has_trait = reclusive }
+			count >= 5
+		}
+	}
+	
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 2
+			has_trait = gregarious
+		}
+		modifier = {
+			add = 1
+			stewardship >= 15
+		}
+	}
+	
+	immediate = {
+		add_character_flag = ottoman_feast_event
+		random_courtier = {
+			limit = {
+				is_adult = yes
+				NOT = { has_trait = reclusive }
+			}
+			save_scope_as = feast_guest
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.001.a
+		
+		add_gold = -300
+		add_prestige = 200
+		add_stress = -50
+		
+		court_opinion = 25
+		vassal_opinion = 15
+		
+		random_list = {
+			25 = { add_trait = master_calligrapher }
+			25 = { add_trait = palace_musician }
+			25 = { add_trait = turkish_poet }
+			25 = { nothing = yes }
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.001.b
+		
+		add_gold = -150
+		add_prestige = 100
+		
+		court_opinion = 10
+	}
+	
+	option = {
+		name = ottoman_culture.001.c
+		
+		add_trait = greedy
+		add_stress = 25
+		
+		court_opinion = -15
+	}
+}
+
+# Turkish Bath Experience
+ottoman_culture.002 = {
+	type = character_event
+	title = ottoman_culture.002.t
+	desc = ottoman_culture.002.desc
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		capital_county = {
+			has_building = turkish_baths_01
+		}
+		stress >= 50
+		NOT = { has_character_flag = bath_event }
+	}
+	
+	immediate = {
+		add_character_flag = bath_event
+	}
+	
+	option = {
+		name = ottoman_culture.002.a
+		
+		add_stress = -75
+		add_health_boost = 1.0
+		
+		random_list = {
+			50 = { add_trait = patient }
+			30 = { add_trait = calm }
+			20 = { nothing = yes }
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.002.b
+		
+		add_learning_lifestyle_xp = 100
+		add_stress = -25
+		
+		random_list = {
+			40 = { add_trait = scholar }
+			60 = { nothing = yes }
+		}
+	}
+}
+
+# Grand Bazaar Trading
+ottoman_culture.003 = {
+	type = character_event
+	title = ottoman_culture.003.t
+	desc = ottoman_culture.003.desc
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		any_realm_county = {
+			has_building = grand_bazaar_01
+		}
+		NOT = { has_character_flag = bazaar_event }
+	}
+	
+	immediate = {
+		add_character_flag = bazaar_event
+	}
+	
+	option = {
+		name = ottoman_culture.003.a
+		
+		add_gold = 400
+		add_prestige = 100
+		
+		random_list = {
+			40 = { add_trait = silk_road_trader }
+			60 = { nothing = yes }
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.003.b
+		
+		add_trait = generous
+		add_piety = 150
+		
+		court_opinion = 20
+		different_culture_opinion = 15
+	}
+}
+
+# Sufi Dervish Ceremony
+ottoman_culture.004 = {
+	type = character_event
+	title = ottoman_culture.004.t
+	desc = ottoman_culture.004.desc
+	theme = learning
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		religion = sunni
+		learning >= 12
+		NOT = { has_character_flag = sufi_ceremony_event }
+	}
+	
+	immediate = {
+		add_character_flag = sufi_ceremony_event
+	}
+	
+	option = {
+		name = ottoman_culture.004.a
+		
+		add_trait = sufi_mystic
+		add_piety = 300
+		add_stress = -100
+		
+		same_faith_opinion = 25
+	}
+	
+	option = {
+		name = ottoman_culture.004.b
+		
+		add_learning_lifestyle_xp = 200
+		add_piety = 150
+		
+		court_opinion = 15
+	}
+	
+	option = {
+		name = ottoman_culture.004.c
+		
+		add_trait = cynical
+		add_stress = 50
+		
+		same_faith_opinion = -15
+		different_faith_opinion = 10
+	}
+}
+
+# Palace Gardens Event
+ottoman_culture.005 = {
+	type = character_event
+	title = ottoman_culture.005.t
+	desc = ottoman_culture.005.desc
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		capital_county = {
+			has_building = ottoman_palace_01
+		}
+		NOT = { has_character_flag = palace_gardens_event }
+		stress >= 25
+	}
+	
+	immediate = {
+		add_character_flag = palace_gardens_event
+	}
+	
+	option = {
+		name = ottoman_culture.005.a
+		
+		add_trait = master_gardener
+		add_stress = -50
+		add_health_boost = 0.5
+		
+		court_opinion = 15
+	}
+	
+	option = {
+		name = ottoman_culture.005.b
+		
+		add_trait = patient
+		add_stress = -25
+		
+		random_courtier = {
+			limit = { is_adult = yes }
+			add_opinion = {
+				target = root
+				modifier = shared_moment
+				opinion = 20
+			}
+		}
+	}
+}
+
+# Ottoman Music and Poetry
+ottoman_culture.006 = {
+	type = character_event
+	title = ottoman_culture.006.t
+	desc = ottoman_culture.006.desc
+	theme = court
+	
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		diplomacy >= 12
+		NOT = { has_character_flag = music_poetry_event }
+		any_courtier = {
+			OR = {
+				has_trait = poet
+				has_trait = palace_musician
+				has_trait = turkish_poet
+			}
+		}
+	}
+	
+	immediate = {
+		add_character_flag = music_poetry_event
+		random_courtier = {
+			limit = {
+				OR = {
+					has_trait = poet
+					has_trait = palace_musician
+					has_trait = turkish_poet
+				}
+			}
+			save_scope_as = artist_courtier
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.006.a
+		
+		add_trait = turkish_poet
+		add_diplomacy_lifestyle_xp = 150
+		add_prestige = 200
+		
+		court_opinion = 20
+		
+		scope:artist_courtier = {
+			add_opinion = {
+				target = root
+				modifier = artistic_patron
+				opinion = 30
+			}
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.006.b
+		
+		add_trait = palace_musician
+		add_stress = -75
+		add_prestige = 100
+		
+		court_opinion = 25
+	}
+}
+
+# Ottoman Archery Competition
+ottoman_culture.007 = {
+	type = character_event
+	title = ottoman_culture.007.t
+	desc = ottoman_culture.007.desc
+	theme = martial
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		prowess >= 10
+		NOT = { has_character_flag = archery_competition_event }
+		any_knight = {
+			count >= 3
+		}
+	}
+	
+	immediate = {
+		add_character_flag = archery_competition_event
+	}
+	
+	option = {
+		name = ottoman_culture.007.a
+		
+		add_prowess = 2
+		add_prestige = 150
+		
+		every_knight = {
+			add_opinion = {
+				target = root
+				modifier = respected_warrior
+				opinion = 15
+			}
+		}
+		
+		random_list = {
+			30 = { add_trait = hunter }
+			70 = { nothing = yes }
+		}
+	}
+	
+	option = {
+		name = ottoman_culture.007.b
+		
+		add_trait = humble
+		add_prestige = 50
+		
+		court_opinion = 10
+		vassal_opinion = 15
+	}
+}

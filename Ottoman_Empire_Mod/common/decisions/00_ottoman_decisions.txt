@@ -1,0 +1,339 @@
+# Ottoman Empire Decisions
+
+form_ottoman_empire_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	
+	desc = form_ottoman_empire_decision_desc
+	selection_tooltip = form_ottoman_empire_decision_tooltip
+	
+	is_shown = {
+		is_ruler = yes
+		culture = ottoman
+		highest_held_title_tier = tier_kingdom
+		NOT = { has_title = title:e_ottoman }
+		religion = { is_in_family = rf_islamic }
+	}
+	
+	is_valid_showing_failures_only = {
+		is_independent_ruler = yes
+		prestige_level >= 3
+		completely_controls = title:c_byzantion
+		OR = {
+			completely_controls = title:d_thrace
+			completely_controls = title:d_anatolia
+		}
+		gold >= 500
+	}
+	
+	is_valid = {
+		trigger_if = {
+			limit = { exists = title:e_ottoman.holder }
+			NOT = { title:e_ottoman.holder = root }
+		}
+	}
+	
+	cost = {
+		gold = 500
+		prestige = 1000
+	}
+	
+	effect = {
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		
+		title:e_ottoman = {
+			change_title_holder = {
+				holder = root
+				change = scope:change
+			}
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+		
+		add_trait = sultan_of_sultans
+		add_prestige = 2000
+		add_piety = 500
+		
+		every_vassal = {
+			limit = { religion = root.religion }
+			add_opinion = {
+				target = root
+				modifier = formed_great_empire
+				opinion = 50
+			}
+		}
+		
+		capital_province = {
+			add_province_modifier = {
+				modifier = imperial_capital
+				years = 100
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
+}
+
+conquer_constantinople_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_war.dds"
+	
+	desc = conquer_constantinople_decision_desc
+	selection_tooltip = conquer_constantinople_decision_tooltip
+	
+	is_shown = {
+		is_ruler = yes
+		culture = ottoman
+		NOT = { has_trait = conqueror_of_constantinople }
+		exists = title:c_byzantion.holder
+		NOT = { title:c_byzantion.holder = root }
+		title:c_byzantion.holder = {
+			OR = {
+				culture = greek
+				culture = roman
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		martial >= 15
+		gold >= 1000
+		prestige_level >= 2
+		has_trait = ghazi_warrior
+		army_size >= 15000
+	}
+	
+	cost = {
+		gold = 1000
+		prestige = 500
+		piety = 200
+	}
+	
+	effect = {
+		title:c_byzantion.holder.top_liege = {
+			save_scope_as = byzantine_emperor
+		}
+		
+		start_war = {
+			cb = conquest_cb
+			target = scope:byzantine_emperor
+			target_title = title:c_byzantion
+		}
+		
+		add_character_modifier = {
+			modifier = preparing_great_conquest
+			years = 5
+		}
+		
+		trigger_event = {
+			id = conquest_constantinople.001
+			days = 30
+		}
+	}
+	
+	ai_potential = {
+		has_trait = ambitious
+		martial >= 12
+	}
+	
+	ai_will_do = {
+		base = 50
+		modifier = {
+			add = 50
+			has_trait = brave
+		}
+		modifier = {
+			add = 25
+			has_trait = zealous
+		}
+	}
+}
+
+establish_janissary_corps_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	
+	desc = establish_janissary_corps_decision_desc
+	selection_tooltip = establish_janissary_corps_decision_tooltip
+	
+	is_shown = {
+		is_ruler = yes
+		culture = ottoman
+		NOT = { has_character_modifier = established_janissary_corps }
+		culture = { has_innovation = innovation_devshirme_system }
+	}
+	
+	is_valid_showing_failures_only = {
+		gold >= 800
+		prestige >= 500
+		highest_held_title_tier >= tier_kingdom
+		any_realm_province = {
+			count >= 10
+		}
+	}
+	
+	cost = {
+		gold = 800
+		prestige = 500
+	}
+	
+	effect = {
+		add_character_modifier = {
+			modifier = established_janissary_corps
+			years = 50
+		}
+		
+		add_trait = janissary_commander
+		
+		unlock_maa = janissary_infantry
+		
+		every_held_title = {
+			limit = { tier = tier_county }
+			add_county_modifier = {
+				modifier = janissary_recruitment
+				years = 25
+			}
+		}
+		
+		add_prestige = 1000
+		add_piety = 200
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+	
+	ai_will_do = {
+		base = 75
+	}
+}
+
+build_grand_mosque_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	
+	desc = build_grand_mosque_decision_desc
+	selection_tooltip = build_grand_mosque_decision_tooltip
+	
+	is_shown = {
+		is_ruler = yes
+		culture = ottoman
+		religion = sunni
+		capital_county = {
+			development >= 20
+		}
+		NOT = { has_character_flag = built_grand_mosque }
+	}
+	
+	is_valid_showing_failures_only = {
+		gold >= 1200
+		piety >= 500
+		learning >= 12
+	}
+	
+	cost = {
+		gold = 1200
+		piety = 500
+	}
+	
+	effect = {
+		add_character_flag = built_grand_mosque
+		
+		capital_county = {
+			add_county_modifier = {
+				modifier = grand_mosque_construction
+				years = 100
+			}
+		}
+		
+		add_trait = devout
+		add_piety = 1000
+		add_prestige = 500
+		
+		every_vassal = {
+			limit = { religion = root.religion }
+			add_opinion = {
+				target = root
+				modifier = built_grand_mosque_opinion
+				opinion = 30
+			}
+		}
+	}
+	
+	ai_potential = {
+		piety >= 1000
+		has_trait = zealous
+	}
+	
+	ai_will_do = {
+		base = 60
+		modifier = {
+			add = 40
+			has_trait = architect
+		}
+	}
+}
+
+establish_ottoman_navy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_naval.dds"
+	
+	desc = establish_ottoman_navy_decision_desc
+	selection_tooltip = establish_ottoman_navy_decision_tooltip
+	
+	is_shown = {
+		is_ruler = yes
+		culture = ottoman
+		any_realm_county = {
+			is_coastal_county = yes
+		}
+		NOT = { has_character_modifier = established_ottoman_navy }
+	}
+	
+	is_valid_showing_failures_only = {
+		gold >= 600
+		prestige >= 300
+		any_realm_county = {
+			is_coastal_county = yes
+			development >= 15
+		}
+	}
+	
+	cost = {
+		gold = 600
+		prestige = 300
+	}
+	
+	effect = {
+		add_character_modifier = {
+			modifier = established_ottoman_navy
+			years = 50
+		}
+		
+		every_realm_county = {
+			limit = { is_coastal_county = yes }
+			add_county_modifier = {
+				modifier = naval_expansion
+				years = 30
+			}
+		}
+		
+		add_prestige = 500
+	}
+	
+	ai_potential = {
+		any_realm_county = {
+			is_coastal_county = yes
+			count >= 3
+		}
+	}
+	
+	ai_will_do = {
+		base = 40
+	}
+}

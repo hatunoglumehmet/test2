@@ -1,0 +1,188 @@
+# Ottoman Empire Innovations
+
+innovation_ottoman_cannons = {
+	group = culture_group_regional
+	
+	culture = { ottoman }
+	
+	potential = {
+		culture = { has_innovation = innovation_mangonel }
+	}
+	
+	unlock_maa = ottoman_cannons
+	
+	character_modifier = {
+		siege_weapon_effectiveness = 0.75
+		siege_phase_time = -0.2
+	}
+	
+	cost = {
+		culture_currency = 200
+	}
+}
+
+innovation_devshirme_system = {
+	group = culture_group_civic
+	
+	culture = { ottoman }
+	
+	potential = {
+		religion = { is_in_family = rf_islamic }
+	}
+	
+	character_modifier = {
+		levy_reinforcement_rate = 0.3
+		army_maintenance_mult = -0.15
+		different_culture_opinion = 15
+	}
+	
+	cost = {
+		culture_currency = 150
+	}
+}
+
+innovation_janissary_corps = {
+	group = culture_group_regional
+	
+	culture = { ottoman }
+	
+	potential = {
+		culture = { has_innovation = innovation_devshirme_system }
+	}
+	
+	unlock_maa = janissary_infantry
+	
+	character_modifier = {
+		knight_effectiveness_mult = 0.5
+		men_at_arms_maintenance = -0.2
+	}
+	
+	cost = {
+		culture_currency = 250
+	}
+}
+
+innovation_ottoman_administration = {
+	group = culture_group_civic
+	
+	culture = { ottoman }
+	
+	character_modifier = {
+		domain_limit = 2
+		vassal_opinion = 10
+		monthly_county_control_growth_factor = 0.25
+	}
+	
+	cost = {
+		culture_currency = 200
+	}
+}
+
+innovation_sipahi_cavalry = {
+	group = culture_group_regional
+	
+	culture = { ottoman }
+	
+	potential = {
+		culture = { has_innovation = innovation_stirrups }
+	}
+	
+	unlock_maa = sipahi_cavalry
+	
+	character_modifier = {
+		heavy_cavalry_damage_mult = 0.3
+		heavy_cavalry_toughness_mult = 0.2
+	}
+	
+	cost = {
+		culture_currency = 180
+	}
+}
+
+innovation_ottoman_navy = {
+	group = culture_group_regional
+	
+	culture = { ottoman }
+	
+	potential = {
+		culture = { has_innovation = innovation_cogs }
+	}
+	
+	character_modifier = {
+		coastal_advantage = 15
+		embarkation_cost_mult = -0.5
+		naval_speed_mult = 0.25
+	}
+	
+	cost = {
+		culture_currency = 220
+	}
+}
+
+innovation_grand_bazaar = {
+	group = culture_group_civic
+	
+	culture = { ottoman }
+	
+	unlock_building = grand_bazaar_01
+	
+	character_modifier = {
+		monthly_income_mult = 0.15
+		build_speed = -0.1
+		trade_route_value_mult = 0.25
+	}
+	
+	cost = {
+		culture_currency = 200
+	}
+}
+
+innovation_ottoman_law = {
+	group = culture_group_civic
+	
+	culture = { ottoman }
+	
+	character_modifier = {
+		tyranny_loss_mult = 0.5
+		county_opinion_add = 10
+		monthly_county_control_growth_factor = 0.2
+	}
+	
+	cost = {
+		culture_currency = 175
+	}
+}
+
+innovation_turkish_baths = {
+	group = culture_group_civic
+	
+	culture = { ottoman }
+	
+	unlock_building = turkish_baths_01
+	
+	character_modifier = {
+		health_boost = 0.5
+		stress_loss_mult = 0.2
+		court_opinion = 15
+	}
+	
+	cost = {
+		culture_currency = 120
+	}
+}
+
+innovation_ottoman_diplomacy = {
+	group = culture_group_civic
+	
+	culture = { ottoman }
+	
+	character_modifier = {
+		diplomacy_per_prestige_level = 1
+		diplomatic_range_mult = 0.5
+		foreign_ruler_opinion = 15
+	}
+	
+	cost = {
+		culture_currency = 150
+	}
+}

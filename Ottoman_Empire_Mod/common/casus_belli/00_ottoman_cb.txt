@@ -1,0 +1,291 @@
+# Ottoman Casus Belli Types
+
+ghazi_expansion_cb = {
+	group = conquest
+	
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+	
+	allowed_for_character = {
+		culture = ottoman
+		has_trait = ghazi_warrior
+		religion = { is_in_family = rf_islamic }
+	}
+	
+	target_titles = duchy
+	target_title_tier = tier_duchy
+	target_de_jure_regions_above = yes
+	
+	valid_to_start = {
+		scope:target = {
+			NOT = { religion = scope:attacker.religion }
+		}
+	}
+	
+	should_invalidate = {
+		NOT = {
+			scope:target = { target_is_liege_or_above = scope:defender }
+		}
+	}
+	
+	cost = {
+		piety = {
+			if = {
+				limit = {
+					scope:target = {
+						tier = tier_county
+					}
+				}
+				add = 150
+			}
+			else_if = {
+				limit = {
+					scope:target = {
+						tier = tier_duchy  
+					}
+				}
+				add = 300
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					scope:target = {
+						tier = tier_county
+					}
+				}
+				add = 200
+			}
+			else_if = {
+				limit = {
+					scope:target = {
+						tier = tier_duchy
+					}
+				}
+				add = 400
+			}
+		}
+	}
+	
+	on_victory_desc = ghazi_expansion_cb_victory_desc
+	on_victory = {
+		scope:attacker = {
+			add_piety = 500
+			add_prestige = 300
+			
+			random_list = {
+				25 = { add_trait = zealous }
+				75 = { nothing = yes }
+			}
+		}
+		
+		scope:target = {
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+			}
+		}
+	}
+	
+	on_white_peace_desc = ghazi_expansion_cb_white_peace_desc
+	on_white_peace = {
+		scope:attacker = {
+			add_prestige = -100
+			add_stress = 25
+		}
+		
+		scope:defender = {
+			add_prestige = 150
+		}
+	}
+	
+	transfer_behavior = transfer
+	
+	war_name = "GHAZI_EXPANSION_WAR_NAME"
+	cb_name = "GHAZI_EXPANSION_CB_NAME"
+	
+	interface_priority = 100
+	
+	use_de_jure_wargoal = yes
+}
+
+ottoman_conquest_cb = {
+	group = conquest
+	
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+	
+	allowed_for_character = {
+		culture = ottoman
+		highest_held_title_tier >= tier_kingdom
+		has_trait = conqueror_of_constantinople
+	}
+	
+	target_titles = kingdom
+	target_title_tier = tier_kingdom
+	target_de_jure_regions_above = yes
+	
+	valid_to_start = {
+		scope:target = {
+			NOT = { culture = scope:attacker.culture }
+		}
+	}
+	
+	should_invalidate = {
+		NOT = {
+			scope:target = { target_is_liege_or_above = scope:defender }
+		}
+	}
+	
+	cost = {
+		piety = 400
+		prestige = 600
+		gold = 500
+	}
+	
+	on_victory_desc = ottoman_conquest_cb_victory_desc
+	on_victory = {
+		scope:attacker = {
+			add_piety = 800
+			add_prestige = 1000
+			add_gold = 1000
+			
+			add_character_modifier = {
+				modifier = great_conqueror
+				years = 20
+			}
+		}
+		
+		scope:target = {
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+			}
+		}
+		
+		# Convert some counties to Ottoman culture
+		every_in_de_jure_hierarchy = {
+			limit = {
+				tier = tier_county
+				holder = scope:attacker
+			}
+			
+			random_list = {
+				25 = { 
+					set_county_culture = scope:attacker.culture 
+					set_county_faith = scope:attacker.faith
+				}
+				75 = { nothing = yes }
+			}
+		}
+	}
+	
+	on_white_peace_desc = ottoman_conquest_cb_white_peace_desc
+	on_white_peace = {
+		scope:attacker = {
+			add_prestige = -200
+			add_stress = 50
+		}
+		
+		scope:defender = {
+			add_prestige = 300
+		}
+	}
+	
+	transfer_behavior = transfer
+	
+	war_name = "OTTOMAN_CONQUEST_WAR_NAME"
+	cb_name = "OTTOMAN_CONQUEST_CB_NAME"
+	
+	interface_priority = 120
+	
+	use_de_jure_wargoal = yes
+}
+
+liberation_of_muslims_cb = {
+	group = holy_war
+	
+	combine_into_one = yes
+	should_show_war_goal_subview = yes
+	mutually_exclusive_titles = { always = yes }
+	
+	allowed_for_character = {
+		culture = ottoman
+		religion = { is_in_family = rf_islamic }
+		has_trait = ghazi_warrior
+	}
+	
+	target_titles = duchy
+	target_title_tier = tier_duchy
+	target_de_jure_regions_above = yes
+	
+	valid_to_start = {
+		scope:target = {
+			NOT = { religion = scope:attacker.religion }
+			any_in_de_jure_hierarchy = {
+				tier = tier_county
+				faith = scope:attacker.faith
+				holder = {
+					NOT = { religion = scope:attacker.religion }
+				}
+			}
+		}
+	}
+	
+	should_invalidate = {
+		NOT = {
+			scope:target = { target_is_liege_or_above = scope:defender }
+		}
+	}
+	
+	cost = {
+		piety = 200
+		prestige = 150
+	}
+	
+	on_victory_desc = liberation_of_muslims_cb_victory_desc
+	on_victory = {
+		scope:attacker = {
+			add_piety = 600
+			add_prestige = 400
+			
+			every_realm_county = {
+				limit = { faith = scope:attacker.faith }
+				add_county_modifier = {
+					modifier = liberated_muslims
+					years = 15
+				}
+			}
+		}
+		
+		scope:target = {
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+			}
+		}
+	}
+	
+	on_white_peace_desc = liberation_of_muslims_cb_white_peace_desc
+	on_white_peace = {
+		scope:attacker = {
+			add_prestige = -50
+			add_piety = -100
+		}
+		
+		scope:defender = {
+			add_prestige = 100
+		}
+	}
+	
+	transfer_behavior = transfer
+	
+	war_name = "LIBERATION_OF_MUSLIMS_WAR_NAME"
+	cb_name = "LIBERATION_OF_MUSLIMS_CB_NAME"
+	
+	interface_priority = 110
+	
+	use_de_jure_wargoal = yes
+}

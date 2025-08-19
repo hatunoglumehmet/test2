@@ -1,0 +1,196 @@
+l_english:
+ # Ottoman Empire Mod - Turkish Localization Override
+ ottoman_empire_mod_name:0 "Osmanlı İmparatorluğu"
+ fatih_sultan_mehmet:0 "Fatih Sultan Mehmet"
+ 
+ # Character Names
+ mehmet_ii:0 "II. Mehmet"
+ bayezid_ii:0 "II. Bayezid" 
+ murad_ii:0 "II. Murad"
+ orhan_gazi:0 "Orhan Gazi"
+ osman_gazi:0 "Osman Gazi"
+ 
+ # Titles
+ ottoman_empire_title:0 "Osmanlı İmparatorluğu"
+ constantinople_title:0 "Konstantiniyye"
+ istanbul_title:0 "İstanbul"
+ bursa_title:0 "Bursa"
+ edirne_title:0 "Edirne"
+ 
+ # Traits
+ conqueror_of_constantinople:0 "Konstantiniyye Fatihi"
+ conqueror_of_constantinople_desc:0 "Bu karakter Konstantiniyye'yi (İstanbul) fethetmiştir ve İslam dünyasında büyük saygı görmektedir."
+ 
+ ottoman_legacy:0 "Osmanlı Mirası"
+ ottoman_legacy_desc:0 "Bu karakter Osmanlı hanedanının bir üyesidir ve büyük bir mirasa sahiptir."
+ 
+ ghazi_warrior:0 "Gazi Savaşçısı"
+ ghazi_warrior_desc:0 "Bu karakter İslam için savaşan kutsal bir savaşçıdır."
+ 
+ grand_vizier:0 "Sadrazam"
+ grand_vizier_desc:0 "Bu karakter Osmanlı İmparatorluğu'nun en üst düzey yöneticisidir."
+ 
+ janissary_commander:0 "Yeniçeri Ağası"
+ janissary_commander_desc:0 "Bu karakter Yeniçeri ordusunun komutanıdır."
+ 
+ master_of_siege:0 "Kuşatma Ustası"
+ master_of_siege_desc:0 "Bu karakter kuşatma savaşında uzmandır."
+ 
+ turkish_poet:0 "Türk Şairi"
+ turkish_poet_desc:0 "Bu karakter Türkçe şiir yazan yetenekli bir sanatçıdır."
+ 
+ ottoman_architect:0 "Osmanlı Mimarı"
+ ottoman_architect_desc:0 "Bu karakter Osmanlı mimarisinde ustadır."
+ 
+ devshirme_officer:0 "Devşirme Subayı"
+ devshirme_officer_desc:0 "Bu karakter devşirme sistemi ile yetişmiş bir subaydir."
+ 
+ sultan_of_sultans:0 "Sultanlar Sultanı"
+ sultan_of_sultans_desc:0 "Bu karakter tüm sultanların üstünde olan büyük bir hükümdardır."
+ 
+ master_calligrapher:0 "Hat Ustası"
+ master_calligrapher_desc:0 "Bu karakter Osmanlı hat sanatında ustadır."
+ 
+ sufi_mystic:0 "Sufi Mutasavvıfı"
+ sufi_mystic_desc:0 "Bu karakter tasavvuf yolunda ilerleyen bir Allah dostudur."
+ 
+ ottoman_diplomat:0 "Osmanlı Diplomatı"
+ ottoman_diplomat_desc:0 "Bu karakter diplomatik işlerde mahir bir temsilcidir."
+ 
+ master_craftsman:0 "Usta Zanaatkar"
+ master_craftsman_desc:0 "Bu karakter zanaat işlerinde usta olan bir marangoz, kuyumcu veya diğer el sanatları ustasıdır."
+ 
+ palace_guardian:0 "Saray Muhafızı"
+ palace_guardian_desc:0 "Bu karakter sarayı koruyan seçkin bir savaşçıdır."
+ 
+ ottoman_scholar:0 "Osmanlı Alimi"
+ ottoman_scholar_desc:0 "Bu karakter İslami ilimlerde derin bilgi sahibi bir alimdir."
+ 
+ silk_road_trader:0 "İpek Yolu Tüccarı"
+ silk_road_trader_desc:0 "Bu karakter uzun mesafeli ticarette uzman bir tüccardır."
+ 
+ palace_musician:0 "Saray Müzisyeni"
+ palace_musician_desc:0 "Bu karakter sarayda müzik icra eden yetenekli bir sanatçıdır."
+ 
+ ottoman_explorer:0 "Osmanlı Kaşifi"
+ ottoman_explorer_desc:0 "Bu karakter yeni yerler keşfetmeyi seven cesur bir kaşiftir."
+ 
+ master_gardener:0 "Bahçıvan Ustası"
+ master_gardener_desc:0 "Bu karakter saray bahçelerini düzenleyen usta bir bahçıvandır."
+ 
+ # Events
+ conquest_of_constantinople:0 "Konstantiniyye'nin Fethi"
+ conquest_of_constantinople_desc:0 "Büyük gün geldi! Konstantiniyye'nin suları karşımızda duruyor ve şehrin kadim surları bizim kararlılığımız karşısında çaresiz kalıyor. Bu fetih İslam dünyası için büyük bir zafer olacak!"
+ 
+ # Event Titles and Descriptions
+ conquest_constantinople.001.t:0 "Konstantiniyye Kuşatması Hazırlıkları"
+ conquest_constantinople.001.desc:0 "Zafer yakındır! Konstantiniyye'yi kuşatmak için ordularımız hazır. Bu kutsal şehri fethetmek İslam dünyası için büyük bir onur olacak."
+ conquest_constantinople.001.a:0 "Allahu Ekber! Kuşatmaya başlayalım!"
+ conquest_constantinople.001.b:0 "Henüz hazır değiliz, bekleyelim."
+ 
+ conquest_constantinople.002.t:0 "Büyük Top"
+ conquest_constantinople.002.desc:0 "Macar usta Orban bizim için devasa bir top inşa etti. Bu silah Konstantiniyye'nin surlarını yıkacak!"
+ conquest_constantinople.002.a:0 "En büyük topu yapalım!"
+ conquest_constantinople.002.b:0 "Küçük top yeterli olur."
+ 
+ conquest_constantinople.003.t:0 "Son Saldırı"
+ conquest_constantinople.003.desc:0 "Konstantiniyye'nin surları yıkıldı! Son saldırının zamanı geldi!"
+ conquest_constantinople.003.a:0 "İstanbul bizimdir!"
+ 
+ conquest_constantinople.004.t:0 "Fethten Sonra"
+ conquest_constantinople.004.desc:0 "İstanbul fethedildi! Şimdi ne yapalım?"
+ conquest_constantinople.004.a:0 "Şehir halkına iyi davranacağız."
+ conquest_constantinople.004.b:0 "Ganimetleri topluyalım!"
+ 
+ conquest_constantinople.005.t:0 "Şehrin Adı"
+ conquest_constantinople.005.desc:0 "Konstantiniyye artık bizim elimizde. Bu şehrin adını değiştirmeli miyiz?"
+ conquest_constantinople.005.a:0 "Artık burası İstanbul'dur!"
+ conquest_constantinople.005.b:0 "Konstantiniyye adı kalsın."
+ 
+ # Buildings
+ ottoman_palace:0 "Osmanlı Sarayı"
+ ottoman_palace_desc:0 "Muhteşem Osmanlı mimarisiyle inşa edilmiş büyük bir saray kompleksi."
+ 
+ janissary_barracks:0 "Yeniçeri Kışlası"
+ janissary_barracks_desc:0 "Osmanlı İmparatorluğu'nun seçkin askeri birimi Yeniçeriler için özel kışla."
+ 
+ grand_bazaar:0 "Kapalıçarşı"
+ grand_bazaar_desc:0 "Dünyanın en büyük kapalı çarşılarından biri, ticaret ve zanaat merkezi."
+ 
+ turkish_baths:0 "Türk Hamamı"
+ turkish_baths_desc:0 "Temizlik ve rahatlama için kullanılan geleneksel Osmanlı hamamı."
+ 
+ # Innovations
+ ottoman_cannons:0 "Osmanlı Topları"
+ ottoman_cannons_desc:0 "Osmanlılar tarafından geliştirilen güçlü kuşatma topları."
+ 
+ devshirme_system:0 "Devşirme Sistemi"
+ devshirme_system_desc:0 "Osmanlı İmparatorluğu'nun kendine özgü asker ve bürokrat yetiştirme sistemi."
+ 
+ janissary_corps:0 "Yeniçeri Ocağı"
+ janissary_corps_desc:0 "Osmanlı İmparatorluğu'nun seçkin piyade birimi."
+ 
+ sipahi_cavalry:0 "Sipahi Süvarisi"
+ sipahi_cavalry_desc:0 "Osmanlı İmparatorluğu'nun ağır süvari birimi."
+ 
+ ottoman_administration:0 "Osmanlı Yönetimi"
+ ottoman_administration_desc:0 "Osmanlı İmparatorluğu'nun gelişmiş idari sistemi."
+ 
+ ottoman_navy:0 "Osmanlı Donanması"
+ ottoman_navy_desc:0 "Osmanlı İmparatorluğu'nun güçlü deniz kuvvetleri."
+ 
+ grand_bazaar_innovation:0 "Kapalıçarşı"
+ grand_bazaar_innovation_desc:0 "Büyük ticaret merkezleri inşa etme tekniği."
+ 
+ ottoman_law:0 "Osmanlı Hukuku"
+ ottoman_law_desc:0 "Osmanlı İmparatorluğu'nun adalet sistemi."
+ 
+ turkish_baths_innovation:0 "Türk Hamamı"
+ turkish_baths_innovation_desc:0 "Geleneksel temizlik ve sağlık merkezleri."
+ 
+ ottoman_diplomacy:0 "Osmanlı Diplomasisi"
+ ottoman_diplomacy_desc:0 "Osmanlı İmparatorluğu'nun gelişmiş diplomatik sistemi."
+ 
+ # Decisions
+ form_ottoman_empire:0 "Osmanlı İmparatorluğu'nu Kurmak"
+ form_ottoman_empire_desc:0 "Küçük bir beylikten büyük bir imparatorluk yaratmak için gerekli koşulları sağladık."
+ 
+ conquer_constantinople_decision:0 "Konstantiniyye'yi Fethetmek"
+ conquer_constantinople_decision_desc:0 "İslam dünyasının hayali olan Konstantiniyye'yi fethetme zamanı geldi!"
+ 
+ establish_janissary_corps_decision:0 "Yeniçeri Ocağı Kurmak"
+ establish_janissary_corps_decision_desc:0 "Seçkin piyade birimi olan Yeniçeri Ocağını kurmak."
+ 
+ build_grand_mosque_decision:0 "Büyük Cami Yaptırmak"
+ build_grand_mosque_decision_desc:0 "İmanın simgesi olan büyük bir cami yaptırmak."
+ 
+ establish_ottoman_navy_decision:0 "Osmanlı Donanması Kurmak"
+ establish_ottoman_navy_decision_desc:0 "Denizlerde de güçlü olmak için donanma kurmak."
+ 
+ # Government Types
+ ottoman_sultanate:0 "Osmanlı Sultanlığı"
+ ottoman_sultanate_desc:0 "Osmanlı İmparatorluğu'nun kendine özgü yönetim sistemi."
+ 
+ # Culture
+ ottoman_culture:0 "Osmanlı"
+ ottoman_culture_desc:0 "Türk, Fars ve Arap kültürlerinin sentezi olan Osmanlı kültürü."
+ 
+ # Court Positions
+ grand_vizier_ottoman:0 "Sadrazam"
+ sipahsalar_ottoman:0 "Sipahsalar"
+ chief_eunuch_ottoman:0 "Darüssaade Ağası"
+ chief_treasurer_ottoman:0 "Defterdar"
+ court_imam_ottoman:0 "Saray İmamı"
+ 
+ # Men at Arms
+ janissary_infantry:0 "Yeniçeri Piyadesi"
+ sipahi_cavalry:0 "Sipahi Süvarisi"
+ ottoman_cannons_maa:0 "Osmanlı Topçuları"
+ akinci_raiders:0 "Akıncı Akınları"
+ 
+ # Dynasty and House
+ dynn_ottoman:0 "Osmanlı"
+ dynn_ottoman_motto:0 "Devlet-i Ebed-müddet"
+ dynn_ottoman_prefix:0 "Osmanoğulları"
+ house_ottoman:0 "Osmanlı Hanedanı"
+ house_ottoman_motto:0 "Nizam-ı Alem"

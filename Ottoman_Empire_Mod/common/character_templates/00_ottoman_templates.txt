@@ -1,0 +1,241 @@
+# Ottoman Character Templates
+
+devshirme_officer_template = {
+	age = { 20 35 }
+	
+	gender_female_chance = 0
+	
+	culture = ottoman
+	faith = sunni
+	
+	trait = devshirme_officer
+	trait = brave
+	trait = diligent
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 1 3 }
+		ambitious
+		patient
+		honest
+		loyal
+		administrator
+	}
+	
+	martial = { 8 16 }
+	diplomacy = { 6 12 }
+	stewardship = { 6 14 }
+	intrigue = { 4 10 }
+	learning = { 4 8 }
+	prowess = { 8 14 }
+	
+	dynasty = none
+	give_nickname = no
+}
+
+janissary_officer_template = {
+	age = { 25 40 }
+	
+	gender_female_chance = 0
+	
+	culture = ottoman
+	faith = sunni
+	
+	trait = janissary_commander
+	trait = brave
+	trait = zealous
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 1 2 }
+		patient
+		diligent
+		honest
+		wrathful
+		ambitious
+	}
+	
+	martial = { 12 20 }
+	diplomacy = { 4 10 }
+	stewardship = { 6 12 }
+	intrigue = { 4 8 }
+	learning = { 4 10 }
+	prowess = { 10 18 }
+	
+	dynasty = none
+	give_nickname = no
+}
+
+ottoman_courtier_template = {
+	age = { 18 50 }
+	
+	gender_female_chance = 15
+	
+	culture = ottoman
+	faith = sunni
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 2 4 }
+		patient
+		diligent
+		honest
+		ambitious
+		gregarious
+		calm
+		temperate
+		generous
+		humble
+		turkish_poet
+		master_calligrapher
+		ottoman_scholar
+		palace_musician
+	}
+	
+	martial = { 4 12 }
+	diplomacy = { 6 16 }
+	stewardship = { 6 16 }
+	intrigue = { 4 12 }
+	learning = { 6 18 }
+	prowess = { 4 10 }
+	
+	dynasty = none
+	give_nickname = no
+}
+
+grand_vizier_template = {
+	age = { 35 55 }
+	
+	gender_female_chance = 0
+	
+	culture = ottoman
+	faith = sunni
+	
+	trait = grand_vizier
+	trait = administrator
+	trait = diligent
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 1 2 }
+		just
+		patient
+		honest
+		temperate
+		humble
+		generous
+	}
+	
+	martial = { 6 12 }
+	diplomacy = { 12 20 }
+	stewardship = { 14 22 }
+	intrigue = { 8 16 }
+	learning = { 8 16 }
+	prowess = { 4 8 }
+	
+	dynasty = none
+	give_nickname = no
+}
+
+ottoman_architect_template = {
+	age = { 30 60 }
+	
+	gender_female_chance = 5
+	
+	culture = ottoman
+	faith = sunni
+	
+	trait = ottoman_architect
+	trait = patient
+	trait = diligent
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 1 3 }
+		calm
+		temperate
+		humble
+		generous
+		genius
+		quick
+		architect
+	}
+	
+	martial = { 4 8 }
+	diplomacy = { 6 12 }
+	stewardship = { 12 20 }
+	intrigue = { 4 8 }
+	learning = { 10 18 }
+	prowess = { 4 8 }
+	
+	dynasty = none
+	give_nickname = no
+}
+
+sufi_mystic_template = {
+	age = { 40 70 }
+	
+	gender_female_chance = 20
+	
+	culture = ottoman
+	faith = sunni
+	
+	trait = sufi_mystic
+	trait = patient
+	trait = calm
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 1 2 }
+		humble
+		temperate
+		generous
+		compassionate
+		honest
+		zealous
+	}
+	
+	martial = { 2 6 }
+	diplomacy = { 8 14 }
+	stewardship = { 4 10 }
+	intrigue = { 2 6 }
+	learning = { 12 20 }
+	prowess = { 2 6 }
+	
+	dynasty = none
+	give_nickname = no
+}
+
+silk_road_merchant_template = {
+	age = { 25 50 }
+	
+	gender_female_chance = 10
+	
+	culture = ottoman
+	faith = sunni
+	
+	trait = silk_road_trader
+	trait = gregarious
+	
+	random_traits = yes
+	random_traits_list = {
+		count = { 1 3 }
+		ambitious
+		patient
+		diligent
+		honest
+		generous
+		greedy
+		temperate
+	}
+	
+	martial = { 4 8 }
+	diplomacy = { 8 16 }
+	stewardship = { 12 20 }
+	intrigue = { 6 14 }
+	learning = { 6 12 }
+	prowess = { 4 8 }
+	
+	dynasty = none
+	give_nickname = no
+}

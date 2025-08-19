@@ -1,0 +1,326 @@
+# Ottoman Empire General Events
+
+namespace = ottoman_empire
+
+# Ottoman Expansion Event
+ottoman_empire.001 = {
+	type = character_event
+	title = ottoman_empire.001.t
+	desc = ottoman_empire.001.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		has_trait = ottoman_legacy
+		realm_size >= 15
+		NOT = { has_character_flag = ottoman_expansion_event }
+	}
+	
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 2
+			has_trait = ambitious
+		}
+	}
+	
+	immediate = {
+		add_character_flag = ottoman_expansion_event
+	}
+	
+	option = {
+		name = ottoman_empire.001.a
+		
+		add_prestige = 300
+		add_trait = administrator
+		
+		every_vassal = {
+			add_opinion = {
+				target = root
+				modifier = efficient_administrator
+				opinion = 15
+			}
+		}
+	}
+	
+	option = {
+		name = ottoman_empire.001.b
+		
+		add_gold = 500
+		add_trait = greedy
+		
+		every_vassal = {
+			add_opinion = {
+				target = root
+				modifier = heavy_taxation
+				opinion = -10
+			}
+		}
+	}
+}
+
+# Janissary Loyalty Event
+ottoman_empire.002 = {
+	type = character_event
+	title = ottoman_empire.002.t
+	desc = ottoman_empire.002.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		has_character_modifier = established_janissary_corps
+		NOT = { has_character_flag = janissary_loyalty_event }
+	}
+	
+	weight_multiplier = {
+		base = 1
+	}
+	
+	immediate = {
+		add_character_flag = janissary_loyalty_event
+	}
+	
+	option = {
+		name = ottoman_empire.002.a
+		
+		add_gold = -200
+		add_prestige = 100
+		
+		add_character_modifier = {
+			modifier = loyal_janissaries
+			years = 10
+		}
+	}
+	
+	option = {
+		name = ottoman_empire.002.b
+		
+		add_stress = 50
+		add_character_modifier = {
+			modifier = janissary_unrest
+			years = 5
+		}
+	}
+}
+
+# Ottoman Court Event
+ottoman_empire.003 = {
+	type = character_event
+	title = ottoman_empire.003.t
+	desc = ottoman_empire.003.desc
+	theme = court
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		court_size >= 10
+		NOT = { has_character_flag = ottoman_court_event }
+	}
+	
+	immediate = {
+		add_character_flag = ottoman_court_event
+	}
+	
+	option = {
+		name = ottoman_empire.003.a
+		
+		add_trait = turkish_poet
+		add_prestige = 200
+		
+		court_opinion = 20
+	}
+	
+	option = {
+		name = ottoman_empire.003.b
+		
+		add_learning_lifestyle_xp = 150
+		add_prestige = 100
+		
+		custom_tooltip = ottoman_empire.003.b.tt
+	}
+}
+
+# Devshirme System Event
+ottoman_empire.004 = {
+	type = character_event
+	title = ottoman_empire.004.t
+	desc = ottoman_empire.004.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		culture = { has_innovation = innovation_devshirme_system }
+		any_realm_county = {
+			NOT = { culture = root.culture }
+			development >= 10
+		}
+		NOT = { has_character_flag = devshirme_event }
+	}
+	
+	immediate = {
+		add_character_flag = devshirme_event
+		random_realm_county = {
+			limit = {
+				NOT = { culture = root.culture }
+				development >= 10
+			}
+			save_scope_as = devshirme_county
+		}
+	}
+	
+	option = {
+		name = ottoman_empire.004.a
+		
+		add_prestige = 150
+		
+		scope:devshirme_county = {
+			add_county_modifier = {
+				modifier = devshirme_recruitment
+				years = 20
+			}
+		}
+		
+		create_character = {
+			location = scope:devshirme_county
+			template = devshirme_officer_template
+			culture = ottoman
+			faith = sunni
+			dynasty = none
+			save_scope_as = new_officer
+		}
+		
+		add_courtier = scope:new_officer
+	}
+	
+	option = {
+		name = ottoman_empire.004.b
+		
+		add_piety = 100
+		add_stress = 25
+		
+		scope:devshirme_county = {
+			county_opinion_add = 10
+		}
+	}
+}
+
+# Ottoman Trade Event
+ottoman_empire.005 = {
+	type = character_event
+	title = ottoman_empire.005.t
+	desc = ottoman_empire.005.desc
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		any_realm_county = {
+			has_building = grand_bazaar_01
+		}
+		NOT = { has_character_flag = ottoman_trade_event }
+	}
+	
+	immediate = {
+		add_character_flag = ottoman_trade_event
+	}
+	
+	option = {
+		name = ottoman_empire.005.a
+		
+		add_gold = 800
+		add_prestige = 200
+		
+		every_realm_county = {
+			limit = { has_building = grand_bazaar_01 }
+			add_county_modifier = {
+				modifier = thriving_trade
+				years = 15
+			}
+		}
+	}
+	
+	option = {
+		name = ottoman_empire.005.b
+		
+		add_trait = greedy
+		add_gold = 400
+		
+		vassal_opinion = -15
+	}
+}
+
+# Ottoman Siege Warfare Event
+ottoman_empire.006 = {
+	type = character_event
+	title = ottoman_empire.006.t
+	desc = ottoman_empire.006.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		culture = { has_innovation = innovation_ottoman_cannons }
+		is_at_war = yes
+		any_character_war = {
+			primary_attacker = root
+			is_war_leader = root
+		}
+		NOT = { has_character_flag = ottoman_siege_event }
+	}
+	
+	immediate = {
+		add_character_flag = ottoman_siege_event
+	}
+	
+	option = {
+		name = ottoman_empire.006.a
+		
+		add_trait = master_of_siege
+		add_prestige = 250
+		
+		add_character_modifier = {
+			modifier = siege_master
+			years = 10
+		}
+	}
+	
+	option = {
+		name = ottoman_empire.006.b
+		
+		add_martial_lifestyle_xp = 200
+		add_prestige = 150
+	}
+}

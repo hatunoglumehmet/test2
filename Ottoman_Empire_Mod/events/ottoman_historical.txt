@@ -1,0 +1,427 @@
+# Ottoman Historical Events
+
+namespace = ottoman_historical
+
+# The Rise of the Ottoman Beylik
+ottoman_historical.001 = {
+	type = character_event
+	title = ottoman_historical.001.t
+	desc = ottoman_historical.001.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1299.1.1
+		current_date <= 1350.1.1
+		highest_held_title_tier = tier_duchy
+		NOT = { has_character_flag = ottoman_rise_event }
+	}
+	
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 3
+			has_trait = ambitious
+		}
+	}
+	
+	immediate = {
+		add_character_flag = ottoman_rise_event
+	}
+	
+	option = {
+		name = ottoman_historical.001.a
+		
+		add_trait = ghazi_warrior
+		add_prestige = 500
+		add_piety = 300
+		
+		every_neighboring_realm_same_rank_owner = {
+			limit = { 
+				NOT = { religion = root.religion }
+			}
+			add_opinion = {
+				target = root
+				modifier = rising_power
+				opinion = -20
+			}
+		}
+	}
+}
+
+# The Great Interregnum
+ottoman_historical.002 = {
+	type = character_event
+	title = ottoman_historical.002.t
+	desc = ottoman_historical.002.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_stressed
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1402.7.20
+		current_date <= 1413.7.5
+		NOT = { has_character_flag = interregnum_event }
+		dynasty = ottoman_dynasty
+	}
+	
+	immediate = {
+		add_character_flag = interregnum_event
+	}
+	
+	option = {
+		name = ottoman_historical.002.a
+		
+		add_stress = 100
+		add_trait = diligent
+		
+		every_vassal = {
+			add_opinion = {
+				target = root
+				modifier = stabilizing_realm
+				opinion = 15
+			}
+		}
+		
+		trigger_event = {
+			id = ottoman_historical.003
+			days = 365
+		}
+	}
+	
+	option = {
+		name = ottoman_historical.002.b
+		
+		add_trait = wrathful
+		add_prestige = 200
+		
+		every_vassal = {
+			add_opinion = {
+				target = root
+				modifier = aggressive_ruler
+				opinion = -10
+			}
+		}
+	}
+}
+
+# Reunification of the Ottoman Empire
+ottoman_historical.003 = {
+	type = character_event
+	title = ottoman_historical.003.t
+	desc = ottoman_historical.003.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	option = {
+		name = ottoman_historical.003.a
+		
+		add_trait = unifier
+		add_prestige = 1500
+		add_piety = 400
+		
+		every_vassal = {
+			add_opinion = {
+				target = root
+				modifier = unified_empire
+				opinion = 30
+			}
+		}
+	}
+}
+
+# The Devshirme System Implementation
+ottoman_historical.004 = {
+	type = character_event
+	title = ottoman_historical.004.t
+	desc = ottoman_historical.004.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1380.1.1
+		current_date <= 1600.1.1
+		NOT = { has_character_flag = devshirme_system_event }
+		culture = { has_innovation = innovation_devshirme_system }
+	}
+	
+	immediate = {
+		add_character_flag = devshirme_system_event
+	}
+	
+	option = {
+		name = ottoman_historical.004.a
+		
+		add_prestige = 300
+		add_piety = -50
+		
+		every_realm_county = {
+			limit = { NOT = { culture = root.culture } }
+			add_county_modifier = {
+				modifier = devshirme_recruitment
+				years = 50
+			}
+		}
+		
+		create_character = {
+			location = capital_province
+			template = devshirme_officer_template
+			culture = ottoman
+			faith = sunni
+			dynasty = none
+			save_scope_as = new_devshirme
+		}
+		
+		add_courtier = scope:new_devshirme
+	}
+	
+	option = {
+		name = ottoman_historical.004.b
+		
+		add_piety = 100
+		add_stress = 50
+		
+		different_culture_opinion = 20
+	}
+}
+
+# The Ottoman-Byzantine War
+ottoman_historical.005 = {
+	type = character_event
+	title = ottoman_historical.005.t
+	desc = ottoman_historical.005.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1450.1.1
+		current_date <= 1460.1.1
+		exists = title:e_byzantine_empire.holder
+		NOT = { has_character_flag = byzantine_war_event }
+		NOT = { is_at_war_with = title:e_byzantine_empire.holder }
+	}
+	
+	immediate = {
+		add_character_flag = byzantine_war_event
+	}
+	
+	option = {
+		name = ottoman_historical.005.a
+		
+		title:e_byzantine_empire.holder = {
+			save_scope_as = byzantine_emperor
+		}
+		
+		start_war = {
+			cb = conquest_cb
+			target = scope:byzantine_emperor
+			target_title = title:c_byzantion
+		}
+		
+		add_prestige = 200
+		add_piety = 300
+		
+		trigger_event = {
+			id = conquest_constantinople.001
+			days = 60
+		}
+	}
+	
+	option = {
+		name = ottoman_historical.005.b
+		
+		add_stress = 75
+		add_trait = craven
+		
+		same_faith_opinion = -20
+	}
+}
+
+# Expansion into Europe
+ottoman_historical.006 = {
+	type = character_event
+	title = ottoman_historical.006.t
+	desc = ottoman_historical.006.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1354.1.1
+		current_date <= 1500.1.1
+		completely_controls = title:c_byzantion
+		NOT = { has_character_flag = european_expansion_event }
+	}
+	
+	immediate = {
+		add_character_flag = european_expansion_event
+	}
+	
+	option = {
+		name = ottoman_historical.006.a
+		
+		add_trait = conqueror
+		add_prestige = 800
+		
+		every_neighboring_realm_same_rank_owner = {
+			limit = {
+				capital_province = {
+					geographical_region = world_europe
+				}
+			}
+			add_opinion = {
+				target = root
+				modifier = expanding_empire
+				opinion = -30
+			}
+		}
+	}
+	
+	option = {
+		name = ottoman_historical.006.b
+		
+		add_trait = content
+		add_piety = 200
+		
+		every_vassal = {
+			add_opinion = {
+				target = root
+				modifier = peaceful_ruler
+				opinion = 20
+			}
+		}
+	}
+}
+
+# The Battle of Kosovo
+ottoman_historical.007 = {
+	type = character_event
+	title = ottoman_historical.007.t
+	desc = ottoman_historical.007.desc
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1389.6.15
+		current_date <= 1389.8.15
+		NOT = { has_character_flag = kosovo_battle_event }
+		is_at_war = yes
+	}
+	
+	immediate = {
+		add_character_flag = kosovo_battle_event
+	}
+	
+	option = {
+		name = ottoman_historical.007.a
+		
+		add_trait = brave
+		add_prestige = 1000
+		add_piety = 300
+		
+		every_knight = {
+			add_trait = veteran
+		}
+		
+		add_character_modifier = {
+			modifier = kosovo_victor
+			years = 10
+		}
+	}
+}
+
+# Ottoman Naval Expansion
+ottoman_historical.008 = {
+	type = character_event
+	title = ottoman_historical.008.t
+	desc = ottoman_historical.008.desc
+	theme = realm
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	trigger = {
+		is_ruler = yes
+		culture = ottoman
+		current_date >= 1470.1.1
+		current_date <= 1550.1.1
+		any_realm_county = {
+			is_coastal_county = yes
+			count >= 5
+		}
+		NOT = { has_character_flag = naval_expansion_event }
+	}
+	
+	immediate = {
+		add_character_flag = naval_expansion_event
+	}
+	
+	option = {
+		name = ottoman_historical.008.a
+		
+		add_gold = -800
+		add_prestige = 500
+		
+		add_character_modifier = {
+			modifier = established_ottoman_navy
+			years = 50
+		}
+		
+		every_realm_county = {
+			limit = { is_coastal_county = yes }
+			add_county_modifier = {
+				modifier = naval_expansion
+				years = 30
+			}
+		}
+	}
+	
+	option = {
+		name = ottoman_historical.008.b
+		
+		add_trait = content
+		add_stress = 25
+		
+		same_culture_opinion = -10
+	}
+}

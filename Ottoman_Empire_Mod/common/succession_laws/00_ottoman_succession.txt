@@ -1,0 +1,50 @@
+# Ottoman Succession Laws
+
+ottoman_succession = {
+	can_keep_lieges = yes
+	can_disinherit = yes
+	
+	valid_for_government = {
+		has_government = ottoman_sultanate_government
+	}
+	
+	succession_order = {
+		oldest_child_of_ruler = 40
+		oldest_child_of_ruler_even_if_died = 30
+		youngest_child_of_ruler = 20
+		other_children_of_ruler = 10
+		siblings_of_ruler = 5
+		nephews_and_nieces_of_ruler = 3
+		grandchildren_of_ruler = 8
+	}
+	
+	flag = succession_order_determines_heir
+	flag = patrilineal
+	flag = allows_dynasty_named_realms
+	flag = can_title_revoke_after_law_change
+	
+	vassal_opinion = -5
+	player_heir_opinion = 10
+	
+	# Historical Ottoman practice - Sultan could choose heir
+	character_modifier = {
+		opinion_of_liege = 5
+		monthly_prestige = 0.2
+	}
+	
+	possible = {
+		culture = ottoman
+		highest_held_title_tier >= tier_kingdom
+		religion = { is_in_family = rf_islamic }
+	}
+	
+	revoke_cost = {
+		prestige = 150
+		piety = 100
+	}
+	
+	pass_cost = {
+		prestige = 100
+		piety = 50
+	}
+}

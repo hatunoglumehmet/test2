@@ -1,0 +1,298 @@
+# Ottoman Empire Buildings
+
+# Grand Bazaar
+grand_bazaar_01 = {
+	construction_time = 1095
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	can_construct = {
+		culture = { has_innovation = innovation_grand_bazaar }
+	}
+	
+	cost_gold = 150
+	
+	levy = 100
+	garrison = 150
+	
+	tax_income_add = 2.0
+	monthly_income_mult = 0.15
+	
+	province_modifier = {
+		travel_speed = 0.2
+		supply_limit_mult = 0.1
+	}
+	
+	county_modifier = {
+		tax_mult = 0.05
+		development_growth = 0.1
+	}
+	
+	character_modifier = {
+		monthly_prestige = 0.1
+	}
+	
+	next_building = grand_bazaar_02
+	
+	type_icon = "icon_building_grand_bazaar"
+}
+
+grand_bazaar_02 = {
+	construction_time = 1460
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	cost_gold = 300
+	
+	levy = 150
+	garrison = 200
+	
+	tax_income_add = 4.0
+	monthly_income_mult = 0.25
+	
+	province_modifier = {
+		travel_speed = 0.3
+		supply_limit_mult = 0.2
+	}
+	
+	county_modifier = {
+		tax_mult = 0.1
+		development_growth = 0.15
+	}
+	
+	character_modifier = {
+		monthly_prestige = 0.2
+	}
+	
+	type_icon = "icon_building_grand_bazaar"
+}
+
+# Janissary Barracks
+janissary_barracks_01 = {
+	construction_time = 730
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	can_construct = {
+		culture = { has_innovation = innovation_janissary_corps }
+	}
+	
+	cost_gold = 200
+	
+	levy = 200
+	garrison = 300
+	
+	province_modifier = {
+		defender_advantage = 5
+		fort_level = 1
+	}
+	
+	county_modifier = {
+		levy_reinforcement_rate = 0.2
+	}
+	
+	character_modifier = {
+		men_at_arms_cap = 1
+		men_at_arms_maintenance = -0.1
+	}
+	
+	next_building = janissary_barracks_02
+	
+	type_icon = "icon_building_barracks"
+}
+
+janissary_barracks_02 = {
+	construction_time = 1095
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	cost_gold = 400
+	
+	levy = 300
+	garrison = 500
+	
+	province_modifier = {
+		defender_advantage = 10
+		fort_level = 2
+	}
+	
+	county_modifier = {
+		levy_reinforcement_rate = 0.35
+	}
+	
+	character_modifier = {
+		men_at_arms_cap = 2
+		men_at_arms_maintenance = -0.15
+		knight_effectiveness_mult = 0.2
+	}
+	
+	type_icon = "icon_building_barracks"
+}
+
+# Turkish Baths
+turkish_baths_01 = {
+	construction_time = 545
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	can_construct = {
+		culture = { has_innovation = innovation_turkish_baths }
+	}
+	
+	cost_gold = 100
+	
+	tax_income_add = 1.0
+	
+	county_modifier = {
+		development_growth = 0.2
+		disease_resistance = 15
+	}
+	
+	character_modifier = {
+		health_boost = 0.5
+		stress_loss_mult = 0.15
+		monthly_prestige = 0.05
+	}
+	
+	province_modifier = {
+		supply_limit_mult = 0.1
+	}
+	
+	next_building = turkish_baths_02
+	
+	type_icon = "icon_building_temple"
+}
+
+turkish_baths_02 = {
+	construction_time = 730
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	cost_gold = 200
+	
+	tax_income_add = 2.0
+	
+	county_modifier = {
+		development_growth = 0.3
+		disease_resistance = 25
+	}
+	
+	character_modifier = {
+		health_boost = 0.75
+		stress_loss_mult = 0.25
+		monthly_prestige = 0.1
+		court_opinion = 10
+	}
+	
+	province_modifier = {
+		supply_limit_mult = 0.2
+	}
+	
+	type_icon = "icon_building_temple"
+}
+
+# Ottoman Palace Complex
+ottoman_palace_01 = {
+	construction_time = 1825
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		trigger_if = {
+			limit = { exists = holder }
+			holder = {
+				culture = ottoman
+				highest_held_title_tier >= tier_kingdom
+			}
+		}
+	}
+	
+	cost_gold = 800
+	
+	tax_income_add = 3.0
+	levy = 200
+	garrison = 400
+	
+	county_modifier = {
+		tax_mult = 0.15
+		development_growth = 0.25
+	}
+	
+	character_modifier = {
+		monthly_prestige = 0.5
+		court_opinion = 20
+		vassal_opinion = 10
+		domain_limit = 1
+	}
+	
+	province_modifier = {
+		defender_advantage = 15
+		fort_level = 2
+		supply_limit_mult = 0.3
+	}
+	
+	next_building = ottoman_palace_02
+	
+	type_icon = "icon_building_common_tradeport"
+}
+
+ottoman_palace_02 = {
+	construction_time = 2555
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		trigger_if = {
+			limit = { exists = holder }
+			holder = {
+				culture = ottoman
+				highest_held_title_tier >= tier_empire
+			}
+		}
+	}
+	
+	cost_gold = 1500
+	
+	tax_income_add = 6.0
+	levy = 400
+	garrison = 700
+	
+	county_modifier = {
+		tax_mult = 0.25
+		development_growth = 0.4
+	}
+	
+	character_modifier = {
+		monthly_prestige = 1.0
+		court_opinion = 35
+		vassal_opinion = 20
+		domain_limit = 2
+		diplomatic_range_mult = 0.5
+	}
+	
+	province_modifier = {
+		defender_advantage = 25
+		fort_level = 3
+		supply_limit_mult = 0.5
+	}
+	
+	type_icon = "icon_building_common_tradeport"
+}

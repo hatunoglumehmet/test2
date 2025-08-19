@@ -1,0 +1,20 @@
+# Ottoman Dynasty
+
+ottoman_dynasty = {
+	name = "dynn_ottoman"
+	culture = ottoman
+	
+	motto = "dynn_ottoman_motto"
+	prefix = "dynn_ottoman_prefix"
+	
+	coat_of_arms = {
+		template = coa_plain_01
+		layer = {
+			texture = "gfx/coat_of_arms/colored_emblems/ce_crescent_star.dds"
+			color1 = red
+			color2 = white
+		}
+	}
+	
+	# Historical members will be added through history files
+}
